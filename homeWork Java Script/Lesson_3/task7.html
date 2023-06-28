@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>Задача 7</h1>
+	<p>З клавіатури вводиться номер місяця. Вивести до якої пори він відноситься </p>
+
+	<script>
+		//Задача 7. З клавіатури вводиться номер місяця. Вивести до якої пори він відноситься
+
+		//Крок №0. Введення позначень
+		//номер місяця - monthNumber
+		//пора року - season
+
+		//Крок №1. вводимо необхідна дані
+		let monthNumber = parseInt(prompt('Введіть номер місяця'))
+		let season
+
+		//Крок №2. Розв'язок задачі
+		switch (monthNumber) {
+			case 12:
+			case 1:
+			case 2:
+				season = 'Пора року ЗИМА'
+				break;
+			case 3:
+			case 4:
+			case 5:
+				season = 'Пора року ВЕСНА'
+				break;
+			case 6:
+			case 7:
+			case 8:
+				season = 'Пора року ЛІТО'
+				break;
+			case 9:
+			case 10:
+			case 11:
+				season = 'Пора року ОСІНЬ'
+				break;
+
+			default:
+				season = 'Ви ввели некоректні дані'
+				break;
+		}
+		alert(season)
+
+
+		//З клавіатури вводяться поступово двоцифрові числа. Заходимо їх добуток поки не буде введено 0.
+
+		let product = 1
+		let userNumberr = 1
+		do {
+			product *= userNumberr
+			userNumberr = parseInt(prompt('Введіть число'))
+		} while (userNumberr !== 0);
+		document.write(`Product = ${product}`)
+
+	</script>
+
+</body>
+
+</html>
