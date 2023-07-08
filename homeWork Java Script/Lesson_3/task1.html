@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>Задача 1</h1>
+	<p>З клавіатури вводяться імена двох дітей та кількість у них цукерок. Вивести не екран ім’я тієї дитини, у якої
+		кількість цукерок є більшою, або вивести, що кількість однакова.</p>
+
+	<script>
+		// Задача 1. З клавіатури вводяться імена двох дітей та кількість у них цукерок. Вивести не екран ім’я тієї дитини, у якої
+		// кількість цукерок є більшою, або вивести, що кількість однакова.
+
+		//Крок 0. Введення позначень
+		// ім'я першої дитини - nameFirstChild
+		// ім'я другої дитини - nameSecondChild
+		// кількість цукерок у першої дитини - numberCandiesFirstChild
+		// кількість цукерок у другої дитини - numberCandiesSecondChild
+		// ім'я дитини - nameChild
+
+		//Крок 1. Введення необхідних даних
+		let nameFirstChild = prompt('Введіть ім`я першої дитини', 'Світлана')
+		let numberCandiesFirstChild = parseInt(prompt('Введіть кількість цукерок першої дитини?', '0'))
+		let nameSecondChild = prompt('Введіть ім`я другої дитини', 'Ігор')
+		let numberCandiesSecondChild = parseInt(prompt('Введіть кількість цукерок другої дитини?', '0'))
+		let nameChild
+
+		//Крок 2. Обчислюємо результат
+		if (numberCandiesFirstChild > numberCandiesSecondChild)
+			document.write(`У ${nameFirstChild} більше цукерок ніж в ${nameSecondChild}`)
+		else
+			if (numberCandiesFirstChild < numberCandiesSecondChild)
+				document.write(`У ${nameSecondChild} більше цукерок ніж в ${nameFirstChild}`)
+			else
+				document.write(`У ${nameFirstChild} і в ${nameSecondChild} однакова кількість цукерок`)
+	</script>
+
+</body>
+
+</html>

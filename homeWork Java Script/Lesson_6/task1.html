@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>Задача 1</h1>
+	<p> З клавіатури вводиться число. Знаходити суму цифр до тих пір. Поки сума не стане більшую за 20.</p>
+
+	<script>
+		//Задача 1. З клавіатури вводиться число. Знаходити суму цифр до тих пір. Поки сума не стане більшую за 20.
+
+		let userNumber = 0
+		let totalNumber = 0
+		const largerAmount = 20
+		do {
+			userNumber = parseInt(prompt('Введіть число'))
+			//Перевірка на коректність введених даних
+			if (isNaN(userNumber)) {
+				alert('Ви ввели некоректне число. Повторіть спробу')
+				continue;//Перейти на початок циклу без збільшення суми.
+			}
+			totalNumber += userNumber
+		} while (totalNumber <= largerAmount);
+		document.write(`Сума перевищила ${largerAmount}. Загальна сума = ${totalNumber}`)
+	</script>
+
+</body>
+
+</html>
