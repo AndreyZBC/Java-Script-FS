@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>Задача 4</h1>
+	<p>Вивести на екран усі трицифрові числа, у яких перша цифра є більшою або рівною за суму другої і третьої.</p>
+
+	<script>
+		//Вивести на екран усі трицифрові числа,
+		// у яких перша цифра є більшою або рівною за суму другої і третьої.
+
+		for (let i1 = 1; i1 <= 9; i1++) {
+			for (let i2 = 0; i2 <= 9; i2++) {
+				for (let i3 = 0; i3 <= 9; i3++) {
+					if (i1 >= (i2 + i3)) {
+						document.write(`${i1}${i2}${i3}<br>`)
+					}
+				}
+			}
+		}
+
+
+	</script>
+
+</body>
+
+</html>

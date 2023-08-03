@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>Задача 5</h1>
+	<p>Створити окремі функції, які переводять:<br>
+		1)Сантиметри у дюйми;<br>
+		2)Кілограми у фунти;<br>
+		3)Кілометри у милі.</p>
+
+	<script>
+		//Задача 5. Створити окремі функції, які переводять:
+		// 1)Сантиметри у дюйми;
+		// 2)Кілограми у фунти;
+		// 3)Кілометри у милі.
+
+		function getConvertCentimetersToInches(centimeters) {
+			let result = centimeters / 2.54
+			return result
+		}
+		function getConvertKilogramsToPounds(kilograms) {
+			let result = kilograms * 2.20462
+			return result
+		}
+		function getConvertKilometersToMiles(kilometers) {
+			let result = kilometers * 0.621371
+			return result
+		}
+
+		let centimeters = parseInt(prompt('Введіть кількість сантиметрів для преведення у дюйми:'))
+		let kilograms = parseInt(prompt('Введіть кількість кілограм для переведення у фунти:'))
+		let kilometers = parseInt(prompt('Введіть кількість кілометрів для переведення у милі:'))
+
+		let сentimetersToInchesResult = getConvertCentimetersToInches(centimeters)
+		let kilogramsToPoundsResult = getConvertKilogramsToPounds(kilograms)
+		let kilometersToMilesResult = getConvertKilometersToMiles(kilometers)
+
+		document.write(`Кількість сантиметрів: ${centimeters} при пепеводі у дюйми = ${сentimetersToInchesResult}<br>`)
+		document.write(`Кількість кілограмів: ${kilograms} при пепеводі у фунти = ${kilogramsToPoundsResult}<br>`)
+		document.write(`Кількість кілометрів: ${kilometers} при пепеводі у милі = ${kilometersToMilesResult} <br>`)
+
+	</script>
+
+</body>
+
+</html>

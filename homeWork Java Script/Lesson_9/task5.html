@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>Задача 5</h1>
+	<p>Дано масив цін у грн. Податок складає 20%. Сформувати масив, який буде містити величину сплаченого податку у грн.
+	</p>
+
+	<script>
+		//Задача 5. Дано масив цін у грн. Податок складає 20%. Сформувати масив, який буде містити величину сплаченого податку у грн.
+
+		//---ФУНКЦІЯ ДЛЯ ВВЕДЕННЯ ДАНИХ В МАСИВ---------------
+		function getPriceArr(userLength) {
+			let arr = []
+			for (let i = 0; i < userLength; i++) {
+				let value = parseInt(prompt(`Введіть перше число: ${i + 1}`))
+				arr.push(value)
+			}
+			return arr
+		}
+		//---ФУНКЦІЯ ДЛЯ ДЛЯ СТВОРЕННЯ МАСИВУ, ЯКИЙ БУДЕ МІСТИТИ ВЕЛИЧИНУ СПЛАЧЕНОГО ПОДАТКУ
+		function getTaxPaid(arr) {
+			let paidArr = []
+			for (const num of arr) {
+				let tax = (20 / 100) * num
+				let totalPrice = num + tax
+				paidArr.push(totalPrice)
+			}
+			return paidArr
+		}
+
+		let priceArr = getPriceArr(7)
+		let taxPaid = getTaxPaid(priceArr)
+		document.write(`Ціни без сплаченого податку ${priceArr}<br>
+		Ціни зі сплаченим податком ${taxPaid}`)
+
+	</script>
+
+</body>
+
+</html>

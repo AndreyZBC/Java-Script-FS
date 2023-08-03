@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>Задача 4</h1>
+	<p>З клавіатури вводиться вік людини. Вивести на екран ким він є (дитиною у садочку, школярем, студентом,
+		працівником, пенсіонером).</p>
+
+	<script>
+		// Задача 4. З клавіатури вводиться вік людини. Вивести на екран ким він є (дитиною у садочку, школярем, студентом,
+		//працівником, пенсіонером).
+
+		//Введення позначень
+		//Вік людини - humanAge
+		//ким являється користувач - whoIsUser
+
+		//Вводимо необхідні дані
+		let humanAge = parseInt(prompt('Введіть ваш вік?'))
+		let whoIsUser
+
+		//Обислюємо результат
+		switch (true) {
+			case (humanAge >= 0 && humanAge <= 5):
+				whoIsUser = 'Ви дитина'
+				break;
+			case (humanAge >= 6 && humanAge <= 16):
+				whoIsUser = 'Ви школяр'
+				break;
+			case (humanAge >= 17 && humanAge <= 24):
+				whoIsUser = 'Ви студент'
+				break;
+			case (humanAge >= 25 && humanAge <= 60):
+				whoIsUser = 'Ви працівник'
+				break;
+			case (humanAge >= 61 && humanAge <= 80):
+				whoIsUser = 'Ви пенсіонер'
+				break;
+
+			default:
+				whoIsUser = 'Це дуже круто, що ви дожили до такого віку'
+				break;
+		}
+		alert(whoIsUser)
+	</script>
+
+</body>
+
+</html>

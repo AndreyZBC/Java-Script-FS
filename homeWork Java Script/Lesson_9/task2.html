@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>Задача 2</h1>
+	<p>Дано масив елементів. Знайти добуток додатних елементів</p>
+
+	<script>
+		//Задача 2. Дано масив елементів. Знайти добуток додатних елементів
+
+		let arr = [-5, 2, 5, 2, 6, 7, -5, 6, -4, 3, -4, -2, 4,]
+
+		let product = 1
+		for (const element of arr) {
+			if (element > 0) product *= element
+		}
+		document.write(`Добуто додатних елементів = ${product} <br>`)
+	</script>
+</body>
+
+</html>

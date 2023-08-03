@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>Задача 3</h1>
+	<p>Дано масив елементів. Усі елементи, які більші за перший елемент помножити на 2
+	</p>
+
+	<script>
+		//Задача 3. Дано масив елементів. Усі елементи, які більші за перший елемент помножити на 2
+
+		//---ФУНКЦІЯ ДЛЯ ВВЕДЕННЯ ДАНИХ В МАСИВ---------------
+		function getDataEntry(userLength) {
+			let arr = []
+			for (let i = 0; i < userLength; i++) {
+				let value = parseInt(prompt(`Введіть перше число: ${i + 1}`))
+				arr.push(value)
+			}
+			return arr
+		}
+
+		//---ФУНКЦІЯ  ДЛЯ МНОЖЕННЯ ЕЛЕМЕНТІВНА НА 2, ЯКІ БІЛЬШІ ЗА ПЕРШИЙ ЕЛЕМЕНТ 
+		function getElementsAreLargerThanFirst(arr) {
+			let result = []
+			for (let i = 0; i < arr.length; i++) {
+				if (arr[i] > arr[0]) {
+					result.push(arr[i] * 2)
+				}
+			}
+			return result
+		}
+
+		let dataEntry = getDataEntry(7)
+		let elementsAreLargerThanFirst = getElementsAreLargerThanFirst(dataEntry)
+		document.write(`Елементи, які більші за перший і помноженні на 2: ${elementsAreLargerThanFirst}`)
+	</script>
+</body>
+
+</html>

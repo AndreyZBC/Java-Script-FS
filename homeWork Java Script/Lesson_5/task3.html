@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>Задача 3</h1>
+	<p>Вивести з використанням циклів маркований список з випадковими числами (1-100). Кількість випадкових чисел
+		вводиться користувачем.</p>
+
+	<script>
+		// Задача 3.Вивести з використанням циклів маркований список з випадковими числами (1-100). Кількість випадкових чисел вводиться користувачем.
+
+		let min = 1
+		let max = 100
+		let quantityNumber = parseInt(prompt('Введіть число і я виведу список з рандомними числами'))
+		document.write(`<ul>`)
+		for (let i = 1; i <= quantityNumber; i++) {
+			let randomOfNumber = min + Math.floor(Math.random() * (max - min + 1))
+			document.write(`<li>${randomOfNumber}</li>`)
+		}
+		document.write(`</ul>`)
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>Задача 2</h1>
+	<p>Дано покази температур (довільна кількість). Розробити функцію, яка дозволить знайти середнє значення для додатних
+		показів температури.</p>
+
+	<script>
+		// Задача 2.Дано покази температур (довільна кількість). 
+		//Розробити функцію, яка дозволить знайти середнє значення для додатних показів температури.
+
+		function averageTemperatureValue() {
+			let quontityPositiveIndicators = 0
+			let sumPositiveIndicators = 0
+			let averageTemperature
+
+			for (let i = 0; ; i++) {
+				let userNumber = parseInt(prompt('Введіть показник температури:'))
+				if (userNumber > 0) {
+					quontityPositiveIndicators++
+					sumPositiveIndicators += userNumber
+				}
+				if (!userNumber)
+					break
+			}
+			averageTemperature = sumPositiveIndicators / quontityPositiveIndicators
+			return averageTemperature
+		}
+		let result = averageTemperatureValue()
+		document.write(`Середня температура серед додатних показників = ${result}`)
+	</script>
+</body>
+
+</html>

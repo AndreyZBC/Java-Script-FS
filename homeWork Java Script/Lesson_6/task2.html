@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>Задача 2</h1>
+	<p>З клавіатури вводяться поступово числа. Знайти два найменші числа. Ввід здійснюється до тих пір, поки різниця між
+		такими числами є більшою за 5.
+	</p>
+
+	<script>
+		// Задача 2. З клавіатури вводяться поступово числа. Знайти два найменші числа.
+		// Ввід здійснюється до тих пір, поки різниця між такими числами є більшою за 5.
+		let minNumber1 = Infinity
+		let minNumber2 = Infinity
+		let difference
+
+		do {
+			let userNumber = parseFloat(prompt('Введіть число:', '0'))
+
+			if (isNaN(userNumber)) {
+				alert('Введено некоректне число. Спробуйте ще раз.')
+				continue;
+			}
+
+			if (userNumber < minNumber1) {
+				minNumber2 = minNumber1
+				minNumber1 = userNumber
+			} else if (userNumber < minNumber2 && userNumber !== minNumber1) {
+				minNumber2 = userNumber
+			}
+
+			difference = minNumber2 - minNumber1
+		} while (difference > 5);
+		document.write(`Два найменші числа: ${minNumber1} і ${minNumber2}`)
+	</script>
+
+</body>
+
+</html>
