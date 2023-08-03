@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>Задача 1</h1>
+	<p> Створити функцію, яка для 3 заданих чисел знаходить одночасно декілька результатів: кількість парних, кількість
+		додатних, кількість більших за 100.</p>
+
+
+	<script>
+		//Задача 1.  Створити функцію, яка для 3 заданих чисел знаходить одночасно декілька 
+		//результатів: кількість парних, кількість додатних, кількість більших за 100.
+
+		function getNumber(num1, num2, num3) {
+			let numberOfEven = 0;
+			let numberOfAdded = 0;
+			let numberGreaterThanOneHundred = 0;
+
+			if (num1 % 2 === 0) {
+				numberOfEven++;
+			}
+			if (num2 % 2 === 0) {
+				numberOfEven++;
+			}
+			if (num3 % 2 === 0) {
+				numberOfEven++;
+			}
+			if (num1 > 0) {
+				numberOfAdded++;
+			}
+			if (num2 > 0) {
+				numberOfAdded++;
+			}
+			if (num3 > 0) {
+				numberOfAdded++;
+			}
+			if (num1 > 100) {
+				numberGreaterThanOneHundred++;
+			}
+			if (num2 > 100) {
+				numberGreaterThanOneHundred++;
+			}
+			if (num3 > 100) {
+				numberGreaterThanOneHundred++;
+			}
+			return [numberOfEven, numberOfAdded, numberGreaterThanOneHundred];
+		}
+
+		let firstNumber = parseInt(prompt('Введіть перше число', '0'));
+		let secondNumber = parseInt(prompt('Введіть друге число', '0'));
+		let thirdNumber = parseInt(prompt('Введіть третє число', '0'));
+
+		let res = getNumber(firstNumber, secondNumber, thirdNumber);
+
+		document.write(`Кількість парних = ${res[0]}<br>`);
+		document.write(`Кількість додатніх = ${res[1]}<br>`);
+		document.write(`Кількість більших за 100 = ${res[2]}<br>`);
+
+
+	</script>
+
+</body>
+
+
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>Задача 2</h1>
+	<p>Дано послідовність платіжок протягом року. Знайти сумарну кількість грошей за:<br>
+		1) за весь рік;<br>
+		2) у першій половині року;<br>
+		3) у другій половині року;<br>
+		4) за літо;<br>
+		5) за ІІ квартал;<br>
+		6) за парні місяці (з парними номерами);<br>
+		7) за місяці, які є початковими у сезоні (весна, літо, осінь, зима).
+	</p>
+
+	<script>
+		// Задача 2. Дано послідовність платіжок протягом року. Знайти сумарну кількість грошей за:
+		// 1) за весь рік;
+		// 2) у першій половині року;
+		// 3) у другій половині року;
+		// 4) за літо;
+		// 5) за ІІ квартал;
+		// 6) за парні місяці (з парними номерами);
+		// 7) за місяці, які є початковими у сезоні (весна, літо, осінь, зима).
+
+		//---ФУНКЦІЯ ДЛЯ ВВЕДЕННЯ ДАНИХ В МАСИВ----------
+		function paymentArray(userLength, prefixMessage) {
+			let payments = []
+			for (let i = 0; i <= 11; i++) {
+				let userPaymenst = parseInt(prompt(`${prefixMessage} ${i + 1} = `))
+				payments.push(userPaymenst)
+			}
+			return payments
+		}
+		//---ФУНКЦІЯ ДЛЯ ЗНАХОДЖЕННЯ СУМАРНОЇ КІЛЬКОСТІ ГРОШЕЙ ЗА РІК
+		function amountOfMoney(payments) {
+			let sum = 0
+			for (let i = 0; i < payments.length; i++) {
+				sum = sum + payments[i]
+			}
+			return sum
+		}
+		//---ФУНКЦІЯ ДЛЯ ЗНАХОДЖЕННЯ СУМИ У ПЕРШІЙ ПОЛОВИНІ РОКУ
+		function amountOfTheFirstHalfYear(payments) {
+			let sum = 0
+			for (let i = 0; i <= 5; i++) {
+				sum = sum + payments[i]
+			}
+			return sum
+		}
+		//---ФУНКЦІЯ ДЛЯ ЗНАХОДЖЕННЯ СУМИ У ДРУГІЙ ПОЛОВИНІ РОКУ
+		function amountOfTheSecondHalfYear(payments) {
+			let sum = 0
+			for (let i = 6; i <= 11; i++) {
+				sum = sum + payments[i]
+			}
+			return sum
+		}
+		//---ФУНКЦІЯ ДЛЯ ЗНАХОДЖЕННЯ СУМИ ЗА ЛІТО
+		function amountForTheSummer(payments) {
+			let sum = 0
+			for (let i = 6; i <= 8; i++) {
+				sum = sum + payments[i]
+			}
+			return sum
+		}
+		//---ФУНКЦІЯ ДЛЯ ЗНАХОДЖЕННЯ СУМИ ЗА ІІ КВАРТАЛ;
+		function amountForTheGuarter(payments) {
+			let sum = 0
+			for (let i = 4; i <= 6; i++) {
+				sum = sum + payments[i]
+			}
+			return sum
+		}
+		//---ФУНКЦІЯ ДЛЯ ЗНАХОДЖЕННЯ СУМИ ЗА ПАРНІ МІСЯЦІ (з парними номерами);
+		function amountForEvenMonths(payments) {
+			let sum = 0
+			for (let i = 0; i <= 11; i++) {
+				if (i % 2 === 0)
+					sum = sum + payments[i]
+			}
+			return sum
+		}
+		// ---ФУНКЦІЯ ДЛЯ ЗНАХОДЖЕННЯ СУМИ ЗА МІСЯЦІ, ЯКІ Є ПОЧАТКОВИМИ У СЕЗОНІ;
+		function amountInitialMonthsInTheSeason(payments) {
+			let sum = 0
+			for (let i = 2; i <= 11; i += 3) {
+				sum = sum + payments[i]
+			}
+			return sum
+		}
+
+		let arr = paymentArray(12, 'Введіть платіжку за місяць з номером ')
+		document.write(`Платіжки за місяць протягом року: ${arr} <br>`)
+		let totalSum = amountOfMoney(arr)
+		document.write(`Загальна сума платіжок за весь рік року: ${totalSum} <br>`)
+		let sumFirstHalfYear = amountOfTheFirstHalfYear(arr)
+		document.write(`Загальна сума платіжок за першу половину року ${sumFirstHalfYear} <br>`)
+		let sumSeconHalfYear = amountOfTheSecondHalfYear(arr)
+		document.write(`Загальна сума платіжок за другу половину року ${sumSeconHalfYear} <br>`)
+		let sumForTheSummer = amountForTheSummer(arr)
+		document.write(`Загальна сума платіжок за літо ${sumForTheSummer} <br>`)
+		let sumForTheGuarter = amountForTheGuarter(arr)
+		document.write(`Загальна сума платіжок за ІІ квартал ${sumForTheGuarter} <br>`)
+		let sumForEvenMonths = amountForEvenMonths(arr)
+		document.write(`Загальна сума платіжок за парні місяці ${sumForEvenMonths} <br>`)
+		let sumInitialMonthsInTheSeason = amountInitialMonthsInTheSeason(arr)
+		document.write(`Загальна сума платіжок за місяці, які є початковими у сезоні ${sumInitialMonthsInTheSeason} <br>`)
+
+	</script>
+</body>
+
+</html>

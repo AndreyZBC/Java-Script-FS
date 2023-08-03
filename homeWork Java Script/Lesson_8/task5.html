@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>Задача 5</h1>
+	<p>Дано послідовність оцінок учня. Підрахувати кількість:<br>
+		1) двійок<br>
+		2) кількість хороших оцінок (добре, відмінно);<br>
+		3) кількість оцінок, які нижче середнього.</p>
+
+	<script>
+		//Задача 5. Дано послідовність оцінок учня. Підрахувати кількість:
+		// 1) двійок
+		// 2) кількість хороших оцінок (добре, відмінно);
+		// 3) кількість оцінок, які нижче середнього.
+		//----ФУНКЦІЯ ДЛЯ ЗНАХОДЖЕННЯ КІЛЬКІСТЬ ДВІЙОК
+		function getStudentEvaluations(arr) {
+			let numberOfTwos = 0
+			for (let i = 0; i < arr.length; i++) {
+				if (arr[i] === 2) numberOfTwos++
+			}
+			return numberOfTwos
+		}
+		//-----ФУНКЦІЯ ДЛЯ ЗНАХОДЖЕННЯ КІЛЬКІСТЬ ОЦІНОК, НИЖЧЕ СЕРЕДНЬОГО
+		function getAverageMarks(arr) {
+			let numberAverageMarks = 0
+			for (let i = 0; i < arr.length; i++) {
+				if (arr[i] === 3 || arr[i] === 4) numberAverageMarks++
+			}
+			return numberAverageMarks
+		}
+		//-----ФУНКЦІЯ ДЛЯ ЗНАХОДЖЕННЯ КІЛЬКІСТЬ ХОРОШИХ ОЦІНОК
+		function getGoodMarks(arr) {
+			let numberGoodMarks = 0
+			for (let i = 0; i < arr.length; i++) {
+				if (arr[i] === 5) numberGoodMarks++
+			}
+			return numberGoodMarks
+		}
+
+
+		let arr = [2, 5, 4, 3, 2, 2, 4, 5, 2, 3, 5, 4, 2, 3, 2,]
+
+		let studentEvaluations = getStudentEvaluations(arr)
+		document.write(`Кількість двійок = ${studentEvaluations}<br>`)
+
+		let averageMarks = getAverageMarks(arr)
+		document.write(`Кількість оцінок нижче середньго = ${averageMarks}<br>`)
+
+		let goodMarks = getGoodMarks(arr)
+		document.write(`Кількість хороших оцінок = ${goodMarks}`)
+
+	</script>
+
+</body>
+
+</html>

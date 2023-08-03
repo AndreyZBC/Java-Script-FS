@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>Задача 1</h1>
+	<p>Дано масив, який зберігає кількість відвідувачів магазину протягом тижня. Вивести на екран:<br>
+		номери днів, протягом яких кількість відвідувачів була меншою за 20;<br>
+		номери днів, коли кількість відвідувачів була мінімальною;<br>
+		номери днів, коли кількість відвідувачів була мінімальною;<br>
+		загальну кількість клієнтів у робочі дні та окремо загальну кількість днів на вихідних.</p>
+
+
+	<script>
+		//Задача 1. Дано масив, який зберігає кількість відвідувачів магазину протягом тижня. Вивести на екран:
+		// номери днів, протягом яких кількість відвідувачів була меншою за 20;
+		// номери днів, коли кількість відвідувачів була мінімальною;
+		// номери днів, коли кількість відвідувачів була максимальною;
+		// загальну кількість клієнтів у робочі дні та окремо загальну кількість клієнтів на вихідних.
+
+		//---ФУНКЦІЯ ДЛЯ ВВЕДЕННЯ ДАНИХ В МАСИВ---------------
+		function getnumberOfVisitorsDuringTheWeek(userLength) {
+			let arr = []
+			for (let i = 0; i < userLength; i++) {
+				let value = parseInt(prompt(`Введіть кількість відвідувачів протягом тижня за ${i + 1} день `))
+				arr.push(value)
+			}
+			return arr
+		}
+		//---фУНКЦІЯ ДЛЯ ВИЗНАЧЕННЯ НОМЕРИ ДНІВ ПРОТЯГОМ, ЯКИХ КІЛЬКІСТЬ ВІДВІДУВАЧІВ БУЛА МЕНШОЮ ЗА 20
+		function getNumberOfVisitorsIisLessThan20(array) {
+			let countArr = []
+			for (let i = 0; i < array.length; i++) {
+				if (array[i] < 20) {
+					countArr.push(i + 1)
+				}
+			}
+			return countArr
+		}
+		//---фУНКЦІЯ ДЛЯ ВИЗНАЧЕННЯ НОМЕРИ ДНІВ КОЛИ КІЛЬКІСТЬ ВІДВІДУВАЧІВ БУЛА МІНІМАЛЬНОЮ
+		function getMinNumbersOfVisitors(array) {
+			let countArr = []
+			let minfVisitors = Math.min(...array)
+			for (let i = 0; i < array.length; i++) {
+				if (array[i] === minfVisitors) {
+					countArr.push(i + 1)
+				}
+			}
+			return countArr
+		}
+		//---фУНКЦІЯ ДЛЯ ВИЗНАЧЕННЯ НОМЕРИ ДНІВ КОЛИ КІЛЬКІСТЬ ВІДВІДУВАЧІВ БУЛА МАКСИМАЛЬНОЮ
+		function getMaxNumbersOfVisitors(array) {
+			let countArr = []
+			let maxfVisitors = Math.max(...array)
+			for (let i = 0; i < array.length; i++) {
+				if (array[i] === maxfVisitors) {
+					countArr.push(i + 1)
+				}
+			}
+			return countArr
+		}
+		//---фУНКЦІЯ ДЛЯ ВИЗНАЧЕННЯ ЗАГАЛЬНОЇ КІЛЬКОСТІ КЛІЄНТІВ У РОБОЧІ ДНІ
+		function getNumberOfCustomersOnWorkingDays(array) {
+			let sum = 0
+			for (let i = 0; i < 5; i++) {
+				sum += array[i]
+			}
+			return sum
+		}
+		//---фУНКЦІЯ ДЛЯ ВИЗНАЧЕННЯ ЗАГАЛЬНОЇ КІЛЬКОСТІ КЛІЄНТІВ У ВИХІДНІ  ДНІ
+		function getNumberOfCustomersOnWeekendDays(array) {
+			let sum = 0
+			for (let i = 5; i < 7; i++) {
+				sum += array[i]
+			}
+			return sum
+		}
+
+		let numberOfVisitorsDuringTheWeek = getnumberOfVisitorsDuringTheWeek(7)
+		document.write(`Кількість відвідувачів протягом тижня ${numberOfVisitorsDuringTheWeek}<br>`)
+		let NumberOfVisitorsIisLessThan20 = getNumberOfVisitorsIisLessThan20(numberOfVisitorsDuringTheWeek)
+		document.write(`Номери днів протягом, яких кількість відвідувачів була меншою за 20: ${NumberOfVisitorsIisLessThan20}<br>`)
+		let minNumbersOfVisitors = getMinNumbersOfVisitors(numberOfVisitorsDuringTheWeek)
+		document.write(`Номери днів, коли кілкість відвідувачів була мінімальною ${minNumbersOfVisitors}<br>`)
+		let maxNumbersOfVisitors = getMaxNumbersOfVisitors(numberOfVisitorsDuringTheWeek)
+		document.write(`Номери днів, коли кілкість відвідувачів була максимальною ${maxNumbersOfVisitors}<br>`)
+		let numberOfCustomersOnWorkingDays = getNumberOfCustomersOnWorkingDays(numberOfVisitorsDuringTheWeek)
+		document.write(`Загальна кількість клієнтів у робочі дні ${numberOfCustomersOnWorkingDays}.<br>`)
+		let numberOfCustomersOnWeekendDays = getNumberOfCustomersOnWeekendDays(numberOfVisitorsDuringTheWeek)
+		document.write(`Загальна кількість клієнтів у вихідні дні ${numberOfCustomersOnWeekendDays}.<br>`)
+	</script>
+
+</body>
+
+
+</html>
